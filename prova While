@@ -1,0 +1,22 @@
+def ler_numeros():
+    numeros = []
+    while True:
+        num = int(input("Digite um número 0 para sair: "))
+        if num == 0:
+            break
+        numeros.append(num)
+    return numeros
+
+def calcular_resultados(numeros):
+    quantidade = len(numeros)
+    soma = sum(numeros)
+    media = soma / quantidade if quantidade > 0 else 0
+    return quantidade, soma, media
+
+def programa_funcao():
+    numeros = ler_numeros()
+    quantidade, soma, media = calcular_resultados(numeros)
+    
+    print(f"Quantidade de números digitados: {quantidade}")
+    print(f"Soma dos números digitados: {soma}")
+    print(f"Média aritmética dos números digitados: {media:.2f}")
